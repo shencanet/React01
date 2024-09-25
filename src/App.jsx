@@ -16,16 +16,16 @@ const OfflineText = () => {
     </div>
   );
 };
-//destructuring
+
+//destructuring props and fixing console.log
 const MyButton = ({ text }) => {
-  console.log(props);
+  console.log(text);
   return <button>{text}</button>;
 };
 
 const ItemFruit = ({ fruit, index }) => {
-  return <li key={index}>{fruit} - {index}</li>;
-}
-
+  return <li key={index}>{fruit} --- {index}</li>;
+};
 
 const App = () => {
   const name = 'Mi Titulo desde una constante';
@@ -39,14 +39,19 @@ const App = () => {
       <h1 className={classTitle}>{name.toUpperCase()}</h1>
       <img src={patkImg} alt={`imagen-${name}`} />
       <img src={Img1} alt={`imagen-${name}`} />
-      <MyButton  text="Boton 1"/>
-      <MyButton text="Boton 2"/>
-      <MyButton text="Boton 3"/>
-      <MyButton text="Boton 4"/>
+      <MyButton text="Boton 1" />
+      <MyButton text="Boton 2" />
+      <MyButton text="Boton 3" />
+      <MyButton text="Boton 4" />
       {user ? <OnlineText /> : <OfflineText />}
-      <ItemFruit fruit={fruits[0]} index={0}/>
+      <ul>
+        {fruits.map((fruit, index) => (
+          <ItemFruit key={index} fruit={fruit} index={index} />
+        ))}
+      </ul>
     </>
   );
 };
 
 export default App;
+
