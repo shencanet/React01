@@ -22,6 +22,11 @@ const MyButton = ({ text }) => {
   return <button>{text}</button>;
 };
 
+const ItemFruit = ({ fruit, index }) => {
+  return <li key={index}>{fruit} - {index}</li>;
+}
+
+
 const App = () => {
   const name = 'Mi Titulo desde una constante';
   const classTitle = 'text-center';
@@ -39,11 +44,7 @@ const App = () => {
       <MyButton text="Boton 3"/>
       <MyButton text="Boton 4"/>
       {user ? <OnlineText /> : <OfflineText />}
-      <ul>
-        {fruits.map((fruit, index) => (
-          <li key={index}>{fruit} - {index}</li>
-        ))}
-      </ul>
+      <ItemFruit fruit={fruits[0]} index={0}/>
     </>
   );
 };
