@@ -27,12 +27,21 @@ const ItemFruit = ({ fruit, index }) => {
   return <li key={index}>{fruit} --- {index}</li>;
 };
 
+const WelcomeText = ({ user }) => {
+  return (
+    <Fragment>
+      <h1>{ user }</h1>
+    </Fragment>
+  );
+}
+
 const App = () => {
   const name = 'Mi Titulo desde una constante';
   const classTitle = 'text-center';
   const patkImg = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
-  const user = false;
+  const user = true;
   const fruits = ['manzana', 'pera', 'uva', 'sandia'];
+  const user2 = 'shen';
 
   return (
     <>
@@ -44,6 +53,7 @@ const App = () => {
       <MyButton text="Boton 3" />
       <MyButton text="Boton 4" />
       {user ? <OnlineText /> : <OfflineText />}
+      {user && <WelcomeText text = "shen" user={user2}/>}
       <ul>
         {fruits.map((fruit, index) => (
           <ItemFruit key={index} fruit={fruit} index={index} />
