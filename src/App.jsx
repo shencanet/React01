@@ -1,4 +1,5 @@
 import { Fragment } from 'react';
+import Img1 from './assets/images/react.svg';
 
 const OnlineText = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
   const patkImg = 'https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
   const pathImg2 = "./src/assets/images/react.svg";
   const user = false;
+  fruits = ['manzana', 'pera', 'uva', 'sandia'];
 
   return (
     <>
@@ -35,6 +37,11 @@ const App = () => {
       <MyButton />
       {user ? <OnlineText /> : <OfflineText />}
       {user && <OnlineText />}
+      <ul>
+        {fruits.map((fruit, index) => (
+          <li key={index}>{fruit}</li>
+        ))}
+      </ul>
 
     </>
   );
