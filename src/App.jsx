@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import Img1 from './assets/images/react.svg';
 import MyButton from '../public/components/Button';
 import WelcomeText from '../public/components/WelcomeText';
+import ButtonState from './ButtonState';
 
 
 const OnlineText = () => {
@@ -37,6 +38,7 @@ const App = () => {
 
   return (
     <>
+      <ButtonState />
       <h1 className={classTitle}>{name.toUpperCase()}</h1>
       <img src={patkImg} alt={`imagen-${name}`} />
       <img src={Img1} alt={`imagen-${name}`} />
