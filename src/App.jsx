@@ -1,9 +1,8 @@
 import { Fragment } from 'react';
 import Img1 from './assets/images/react.svg';
+import MyButton from '../public/components/Button';
+import WelcomeText from '../public/components/WelcomeText';
 
-const PulsarBoton = (text) => {
-  console.log('Pulsado  ' + text);
-}
 
 const OnlineText = () => {
   return (
@@ -26,10 +25,7 @@ const ItemFruit = ({ fruit, index }) => {
   return <li key={index}>{fruit} --- {index}</li>;
 };
 
-const WelcomeText = ({ user }) => {
-  user ? <h3>Online</h3> : <h3>Offline</h3>;
 
-}
 
 const App = () => {
   const name = 'Mi Titulo desde una constante';
@@ -49,7 +45,7 @@ const App = () => {
       <MyButton text="Boton 3" />
       <MyButton text="Boton 4" />
       {user ? <OnlineText /> : <OfflineText />}
-      {user && <WelcomeText text = "shen" user={user2}/>}
+
       <ul>
         {fruits.map((fruit, index) => (
           <ItemFruit key={index} fruit={fruit} index={index} />
@@ -60,4 +56,6 @@ const App = () => {
 };
 
 export default App;
+
+//{user && <WelcomeText text = "shen" user={user2}/>}
 

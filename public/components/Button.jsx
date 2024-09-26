@@ -10,4 +10,9 @@ const MyButton = ({ text }) => {
        </button>)
     };
 
+    const PulsarBoton = (text) => {
+        console.log('Pulsado  ' + text);
+      }
+      
+
     export default MyButton;
