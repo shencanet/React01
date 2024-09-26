@@ -1,6 +1,10 @@
 import { Fragment } from 'react';
 import Img1 from './assets/images/react.svg';
 
+const PulsarBoton = (text) => {
+  console.log('Pulsado  ' + text);
+}
+
 const OnlineText = () => {
   return (
     <div>
@@ -17,22 +21,14 @@ const OfflineText = () => {
   );
 };
 
-//destructuring props and fixing console.log
-const MyButton = ({ text }) => {
-  console.log(text);
-  return <button>{text}</button>;
-};
 
 const ItemFruit = ({ fruit, index }) => {
   return <li key={index}>{fruit} --- {index}</li>;
 };
 
 const WelcomeText = ({ user }) => {
-  return (
-    <Fragment>
-      <h1>{ user }</h1>
-    </Fragment>
-  );
+  user ? <h3>Online</h3> : <h3>Offline</h3>;
+
 }
 
 const App = () => {
